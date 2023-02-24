@@ -1,0 +1,11 @@
+Write an algorithm to find the sum of the numbers in an array.
+
+ArraySum(arr, n): 
+SET i=0 
+SET sum=0 
+WHILE (i < n) 
+DO SET sum = sum + arr[i] 
+   SET i=i+1 
+ENDWHILE 
+PRINT sum 
+END 

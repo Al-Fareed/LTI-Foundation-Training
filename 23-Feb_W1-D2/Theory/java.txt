@@ -1,0 +1,30 @@
+Primitive Data types
+
+byte b1 =123;
+short sh1 = 7654;
+int num1 = 456789;
+long l1=3456789;
+float f1 = 12.5678f;
+double d1 = 234.456789;
+char ch1 = 'A';
+boolean b2= true;
+String str1 = "ALFAREED";
+
+Logical Operators
+
+ * Logical And = &&
+ * Logical Or = ||
+ * LOgical NOt = !
+ * Bitwise And = &
+ * Bitwise Or = |
+ * Bitwise Compliment = ~
+
+Relational Operators
+
+ * Equal to : ==
+ * NOt Equal to : != 
+ * Greater than :>
+ * Less than :<
+ * Greater than Or Equal to: >=
+ * Less than Or Equal to:<=
+ 

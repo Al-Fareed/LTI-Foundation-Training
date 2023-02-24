@@ -1,0 +1,70 @@
+Characteristics Of Algorithm:
+
+Clear and Unambigous-The logic presentation shuold be clear no doubt must occur
+
+Well-Defined inputs-The inputs must be definede correctly, it helps us to get the right results
+
+Well-Defined Outputs-
+
+Feasible-it must optimized and applicable or convenient way
+
+Language Independent-It must be able to write in any lang C,JAVA...
+
+Effectiveness-Following the aboce points to get the effective program
+
+
+
+Basic Properties of Algorithm:
+It should 
+
+	terminate after a finite time.
+
+	produce at least one output
+	take zero or more input
+
+	be deerministic means giving the same output for the same input
+
+Every step in the algorithm must be effective
+
+
+How to design an algorithm:
+
+Clear problem definition
+
+constraints of the problem must be considered while solving the problem
+//constraints in the sense- inputs,arguement s type of variable so on
+
+The input to be taken to solve the problem is solved 
+
+The solution to this problem, is within the given constraints
+
+
+Design of algo
+
+Algorithmn to add 3 numbers and pront the sum
+
+*START
+*Declare 3 integer variable num1,num2 and num3
+*Take the three numbers to be added as inputs in variables num1,num2,and num3 respectively
+*Declare an integer variable sum to store
+the resultant sum of the 3 numbers
+*Add the 3 numbers and store the result in the variable sum
+*Print the value of the variable sum
+*END
+
+
+PSEUDO CODE:
+*A compact and informal high level description of a computer programming algorithm
+
+*It is mandatory that allows the programmer to represent the implementation of algorithm
+
+Flow Chart:
+Flowchart is graphical representation of an algorithm
+program planning tool to solve as a problem
+
+Rules for flow chart
+1-opening statement must be start
+2-ending statement must be end
+3-All symbols must be connected with arrow line
+4-The decision sybmol in the flowchart cannot be associated with the arrow line
+

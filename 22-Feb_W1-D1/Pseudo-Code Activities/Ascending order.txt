@@ -1,0 +1,20 @@
+Write an algorithm to sort an array in ascending order.
+
+ArraySort(Arr,N): 
+SET I=0, J=0, Temp=0 
+FOR I = 0 to N 
+    FOR J = i+1 to N 
+     IF(Arr[J] > Arr[J + 1]) 
+         SET Temp = Arr[J] 
+         SET Arr[J] = Arr[J + 1] 
+         SET Arr[J + 1] = Temp 
+     ENDIF 
+     SET J=J+1 
+    ENDFOR 
+    SET I=I+1 
+ENDFOR 
+FOR I = 0 to N 
+    PRINT Arr[I] 
+    SET I=I+1 
+ENDFOR 
+END 

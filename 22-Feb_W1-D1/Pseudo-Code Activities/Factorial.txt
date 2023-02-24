@@ -1,0 +1,10 @@
+Write an algorithm to find the factorial of given number.
+
+Factorial(number):
+SET Fact = 1 and i = 1
+WHILE i<=number
+SET Fact=Fact*i
+SET i=i+1
+ENDWHILE
+PRINT Fact
+END

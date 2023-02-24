@@ -1,0 +1,17 @@
+Write an algorithm to search for an element in an array.
+
+ArraySearch(arr, N, element): 
+SET i=0 and flag=0 
+WHILE (i<N): 
+IF (arr[i]==element) THEN 
+SET flag=1 
+BREAK 
+ENDIF 
+SET i=i+1 
+ENDWHILE 
+IF(flag==1) THEN 
+PRINT 'Element found' 
+ELSE 
+PRINT 'Element not found' 
+ENDIF 
+END 

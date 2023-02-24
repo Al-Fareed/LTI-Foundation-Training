@@ -1,0 +1,11 @@
+Write an algorithm to generate the Fibonacci Sequence upto to the given number.
+
+Fibonacci(number):
+SET first = 0 , second = 1 and i = 2
+PRINT first and second
+WHILE (i<number)
+SET next = first + second and PRINT next
+SET first = second
+SET second = next and i = i+1
+ENDWHILE
+END

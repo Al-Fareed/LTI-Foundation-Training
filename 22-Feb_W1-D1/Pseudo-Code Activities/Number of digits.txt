@@ -1,0 +1,9 @@
+Write an algorithm to display the number of digits in a given number.
+
+NumberOfDigits(number):
+SET count=0
+WHILE (number > 0):
+SET count=count+1 and SET number=number/10
+ENDWHILE
+PRINT count
+END
