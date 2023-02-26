@@ -62,61 +62,63 @@ Enter the elements in the array
 The mode of the array is
 2
  */
-import java.util.*;
 /**
  * ArrayMode
  */
-public class ArrayMode {
-     static void printMode(int[] a, int n)
-    {
+import java.util.*;;
+ class ArrayMode
+{
+   public static void main(String args[]) 
+    { 
+	
+	try (Scanner sc = new Scanner(System.in)) {
+        System.out.println("Enter the number of elements in the array"); 
+        int n=sc.nextInt(),c=0;
+        int [] a=new int[n];
+        int [] b=new int[n];
+        System.out.println("Enter the elements in the array");
+        // double sum=0;
+        for(int i=0;i<n;i++) 
+        {
+        	a[i]=sc.nextInt();
+        }
         
-        int max = Arrays.stream(a).max().getAsInt();
-        int l=0;
-        int t = max + 1;
-        int[] count = new int[t];
-        for (int i = 0; i < t; i++)
-        {
-            count[i] = 0;
+        for(int i=0;i<n;i++) 
+        {   c=1;
+              if(a[i]==-1)
+               b[i]=0;
+               else
+               {
+                 for(int j=i+1;j<n;j++) 
+             {
+        	if(a[i]==a[j])
+                      {
+                          c++;
+                          a[j]=-1;
+                      }
+              }
+                 b[i]=c;
+                }
         }
- 
-        
-        for (int i = 0; i < n; i++)
+            int m=b[0];
+            for(int i=1;i<n;i++) 
         {
-            count[a[i]]++;
+            if(b[i]>=m)
+                    m=b[i];   
+        	
         }
- 
-        int mode = 0;
-        int k = count[0];
-        for (int i = 1; i < t; i++)
-        {
-            if (count[i] > k)
-            {
-                k = count[i];
-                mode = i;
-                l++;
+            if(m>1){
+                System.out.println("The mode of the array is");
+                for(int i=0;i<n;i++) 
+                {
+                    if(b[i]==m)
+                        System.out.println(a[i]);   
+                }
             }
-        }
-        if(l>0)
-        {
-        System.out.println("The mode of the array is \n" + mode);
-        }
-        else{
-            System.out.println("The mode of the array is none");
-        }
-    }
- 
-    public static void main(String[] args)
-    {
-        try (Scanner sc = new Scanner(System.in)) {
-            int n;
-            System.out.println("Enter the number of elements in the array");
-            n=sc.nextInt();
-            int[] a = new int[20];
-            System.out.println("Enter the elements in the array");
-            for (int i = 0; i < n; i++) {
-                a[i]=sc.nextInt();
+            else{
+                System.out.println("The mode of the array is none");
+
             }
-            printMode(a, n);
-        }
     }
+   }
 }
