@@ -45,10 +45,10 @@ public static void main(String[] args) {
     Scanner sc=new Scanner(System.in);
     int m=sc.nextInt();
     int n=sc.nextInt();
-    if (m <= 2 || n <= 2) {
-        System.out.println("Error: m and n must be greater than 2.");
-        return;
-    }
+    // if (m <= 2 || n <= 2) {
+    //     System.out.println("Error: m and n must be greater than 2.");
+    //     return;
+    // }
 
     char[][] matrix = new char[m][n];
     int startX = 0, endX = n - 1, startY = 0, endY = m - 1;
