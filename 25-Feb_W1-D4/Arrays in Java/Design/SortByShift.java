@@ -25,9 +25,34 @@ Sample Output 3
  */
 import java.util.*;
 public class SortByShift {
-    public static void main(String[] args) {
-        try(Scanner sc=new Scanner(System.in)){
-            
-        }
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    // System.out.println("Enter the number of elements in the array");
+    int n = sc.nextInt();
+    int arr[] = new int[n];
+    for(int i=0;i<n;i++){
+      arr[i] = sc.nextInt();
     }
+    int idx=0,check=0;
+    for(int i=0;i<n-1;i++){
+      if(arr[i]>arr[i+1]){
+        idx=i;
+        check++;
+      }
+    }
+    if(arr[0]<arr[n-1]){
+      check++;
+      idx=n-1;
+    }
+    if(check==0){
+      System.out.println("0");
+    }
+    else if(check>1){
+      System.out.println("-1");
+    }
+    else{
+      System.out.println(n-idx-1);
+    }
+    sc.close();
+  }
 }
