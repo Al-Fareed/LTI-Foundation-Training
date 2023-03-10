@@ -1,34 +1,26 @@
-import java.util.*;
+import java.util.Scanner;
 
-/**
- * Main
- */
 public class Main {
-public static void main(String[] args) {
-    Scanner sc=new Scanner(System.in);
-    System.out.println("Enter the Number of Item Type");
-    int n=sc.nextInt();
-    ItemType it[]=new ItemType[n];
-    ItemTypeBO ib=new ItemTypeBO();
-    Double deposit,cost;
-
-    for (int i = 0; i < n; i++) {
-        System.out.println("Enter the Item Type "+(i+1)+" Name");
-           String name=sc.nextLine();
-           name=sc.nextLine();
-        System.out.println("Enter the Deposit Amount");
-            deposit=sc.nextDouble();
-        System.out.println("Enter the Cost per day");
-            cost=sc.nextDouble();
-            ItemType itemType=new ItemType(name,deposit,cost);
-            ib.add(itemType, it, i);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ItemTypeBO itemTypeBO = new ItemTypeBO();
+        ItemType[] itemTypeArray = new ItemType[10];
+        System.out.println("Enter the Number of Item Type");
+        int num = scanner.nextInt();
+        for (int i = 0; i < num; i++) {
+            System.out.println("Enter the Item Type " + (i + 1) + " Name");
+            String name = scanner.next();
+            System.out.println("Enter the Deposit Amount");
+            double deposit = scanner.nextDouble();
+            System.out.println("Enter the Cost per day");
+            double costPerDay = scanner.nextDouble();
+            ItemType itemType = new ItemType(name, deposit, costPerDay);
+            itemTypeBO.add(itemType, itemTypeArray, i);
         }
-        ib.display(it);
+        itemTypeBO.display(itemTypeArray);
         System.out.println("Enter the Name of the item to be searched");
-        String search = sc.next();
-        ib.search(search, it);
-
-        sc.close();
+        String search = scanner.next();
+        itemTypeBO.search(search, itemTypeArray);
+        scanner.close();
     }
-    
 }
