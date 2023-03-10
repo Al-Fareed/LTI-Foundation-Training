@@ -14,15 +14,14 @@ public class Main {
         Scanner sc=new Scanner(System.in);
         Event e=new Event();
         System.out.println("Enter the event name");
-        e.setEName(sc.next());
+        e.setEName(sc.nextLine());
         System.out.println("Enter the hall name");
         String hallname=sc.nextLine();
-        hallname=sc.nextLine();
         e.setHName(hallname);
         System.out.println("Enter the start date(dd/MM/yyyy)");
-        e.setSDAte(sc.next());
+        e.setSDAte(sc.nextLine());
         System.out.println("Enter the end date(dd/MM/yyyy)");
-        e.setEDate(sc.next());
+        e.setEDate(sc.nextLine());
         System.out.println("Enter the no of people ");
         e.setPeople(sc.nextInt());
         displayDetails(e);
