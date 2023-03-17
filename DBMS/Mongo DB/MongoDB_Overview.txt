@@ -1,0 +1,87 @@
+//1. Write a query to insert two documents into 'books' collection.
+db.books.insertMany([
+  {
+_id: 11,
+title: "MongoDB: The Definitive Guide",
+author_id: [41,42,43,44 ],
+published_date: ISODate("2010-09-24"),
+pages: 216,
+language: "English",
+publisher_id: 61,
+price:2000
+},
+  {
+_id: 12,
+title: "MongoDB: The Definitive Guide",
+author_id: [51,52,53,54 ],
+published_date: ISODate("2011-09-24"),
+pages: 210,
+language: "English",
+publisher_id: 31,
+price:2000
+}
+  ]);
+
+  //2. Write a query to insert two documents into 'publisher' collection.
+  db.publisher.insertMany([
+  {
+_id:61,
+pub_name:"OReilly Media",
+country:"US"
+},
+  {
+_id:71,
+pub_name:"Randy Media",
+country:"IN"
+}
+  ])
+
+//3.Write a query to insert 2 documents into 'author' collection.
+db.author.insertMany([
+{
+_id:61,
+pub_name:"O Reilly Media",
+country:"US"
+},
+ {
+_id:69,
+pub_name:"Reilly Media",
+country:"SZ"
+}
+  ])
+
+//4.Write a query to update the language from 'Hindi' to 'Sanskrit' of the books document with _id value equal to 77.
+db.books.updateOne({_id: 77},{$set:{language:"Sanskrit"}})
+
+//5.Write a query to update the published_date to '2010-10-24' of all the books published by the publisher_id equal to 201.
+db.books.updateMany(
+  {publisher_id: 201},
+  {
+  $set: {published_date: new
+  ISODate("2010-10-24")}
+  }
+)
+
+//6.Write a query to delete the document with _id value equal to 201 present in the 'author' collection.
+ db.author.remove({ _id: 201})
+
+//7.Write a query to delete all the documents present in the 'publisher' collection.
+db.publisher.remove({})
+
+//8.Write a query to delete the documents with publisher_id equal to 201 present in the 'books' collection.
+db.books.remove({publisher_id : 201})
+
+//9.Write a query to rename the fields 'email_id' to 'mail' and 'phoneno' to 'mobile' of the document with _id 41 which is present in the author collection.
+db.author.updateMany({_id:41},{$rename:{email_id:"mail",phoneno:"mobile"}})
+
+//10.Write a query to update name of the publisher to 'UniversityPress' and country to 'US' of the document _id value equal to 203. Suppose if the publisher document _id 203 does not exists, then insert new document with _id 203, the publisher name as 'UniversityPress' and country as 'US'.
+db.publisher.updateOne(
+  { _id: 203 },
+  {
+    $set: {
+      pub_name: "UniversityPress",
+      country: "US"
+    }
+  },
+  { upsert: true }
+)

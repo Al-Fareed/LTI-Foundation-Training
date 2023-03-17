@@ -1,0 +1,56 @@
+Collection: books
+_id                               Int
+title                              String
+author_id                 Integer array
+published_date     date
+pages                         Int
+language                  String array
+publisher_id            Int
+price                            Double
+-------------------------------------------------------------------------------------------------------------------------------
+Collection: author
+_id                               Int
+author_name         {firstname:String, middlename:String, lastname: String}
+age                              Int
+gender                       String
+email_id                    String
+phoneno                   String
+Address                    array of {street:String, city:String, state:String. country: String}
+-------------------------------------------------------------------------------------------------------------------------------
+Collection: publisher
+_id                               Int
+pub_name              String
+country                     String
+-------------------------------------------------------------------------------------------------------------------------------
+books document structure
+{
+_id: 11,
+title: "MongoDB: The Definitive Guide",
+author_id: [41,42,43,44 ],
+published_date: ISODate("2010-09-24"),
+pages: 216,
+language: "English",
+publisher_id: 61,
+price:2000
+} 
+-------------------------------------------------------------------------------------------------------------------------------
+author document structure
+{
+_id: 46,
+author_name:{firstname:"Reb",middlename:"v",lastname: "Doubinsky"},
+age: 50,
+gender:"Male",
+email_id:"Doubinsky @gmail.com",
+phoneno:9339812543,
+Address:
+[
+{street: "45th main street",City:"Avenue Montaigne",state:"Paris", country:"France"},
+{street: "31c main street",City:"Champs-Elysees",state:"Paris",country:"France"}
+]
+} 
+publisher document structure
+{
+_id:61,
+pub_name:"O'Reilly Media",
+country:"US"
+}
