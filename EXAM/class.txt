@@ -1,0 +1,414 @@
+
+
+1) Java compiler name - javac
+
+2) Compile the java code ext of the -> .class -> Byte Code
+
+3) The runtime of java?? JRE
+
+4) class Customer
+   {
+      int id = 101;
+      String name = "Ramu";
+      void printDetails(Customer customer)
+      {
+		System.out.println(this.id);
+		System.out.println(this.name);
+	}
+}
+
+5) class Customer
+   {
+      int id = 101;//instance
+      String name = "Ramu";//instance
+      static void printDetails(Customer customer)
+      {
+		System.out.println(this.id);//error - "this" in static context
+		System.out.println(this.name);//error - "this" in static context
+	}
+}
+6)  class Customer
+   {
+      int id = 101;//instance
+      String name = "Ramu";//instance
+      static void printDetails(Customer customer)
+      {
+		System.out.println(customer.id);
+		System.out.println(customer.name);
+	}
+}
+
+7)  class Customer
+   {
+      int id = 101;//instance
+      String name = "Ramu";//instance
+
+      static void printDetails(Customer customer)
+      {
+		System.out.println(customer.id);
+		System.out.println(customer.name);
+	}
+}
+
+class Another{
+	void callCustomer()
+	{
+		Customer customer = new Customer();
+		
+		Customer.printDetails(customer);
+	}
+	public static void main(String[] arr)
+	{
+		new Another().callCustomer();
+	}
+}
+
+8) What is the access for id and name??
+
+9) What is the scope of default??
+
+10) class Customer
+   {
+      int id = 101;//instance
+      private String name = "Ramu";//instance
+
+      static void printDetails(Customer customer)
+      {
+		System.out.println(customer.id);
+		System.out.println(customer.name);
+	}
+}
+
+class Another{
+	void callCustomer()
+	{
+		Customer customer = new Customer();
+		customer.id = 102;
+		customer.name = "Bimu";//error as name is private
+		Customer.printDetails(customer);
+	}
+	public static void main(String[] arr)
+	{
+		new Another().callCustomer();
+	}
+}
+
+11) class Customer
+   {
+      int id = 101;//instance
+      private String name = "Ramu";//instance
+      static void printDetails(Customer customer)
+      {
+		System.out.println(customer.id);
+		System.out.println(customer.name);
+	}
+}
+
+class Another extends Customer{
+	void callCustomer()
+	{
+		Customer customer = new Customer();
+		id = 102;
+		name = "Bimu";//error - name is still private
+		Customer.printDetails(customer);
+	}
+	public static void main(String[] arr)
+	{
+		new Another().callCustomer();
+	}
+}
+
+12) class Another {
+	void callCustomer()
+	{
+		System.out.println("Hello");
+	}
+	public static void main(String[] arr)
+	{
+		new Another().callCustomer();
+	}
+}
+13) class Another {
+	String msg = "Hello";
+	void callCustomer()
+	{
+		System.out.println("msg");
+	}
+	public static void main(String[] arr)
+	{
+		new Another().callCustomer();
+	}
+}
+14) class Another {
+	private String msg = "Hello";
+	void callCustomer()
+	{
+		System.out.println(msg);
+	}
+	public static void main(String[] arr)
+	{
+		new Another().callCustomer();
+	}
+}
+
+15) class Another {
+	static String msg = "Hello";
+	void callCustomer()
+	{
+		System.out.println(msg);
+	}
+	public static void main(String[] arr)
+	{
+		new Another().callCustomer();
+	}
+}
+16)
+
+class Customer
+{
+	void login(String username,String password)
+	{
+		System.out.println("A");
+	}
+	void login(String pin)
+	{
+		System.out.println("B");
+	}
+	bool login(String face)
+	{
+		System.out.println("C");
+		return true;
+	}
+     	public static void main(String[] arr)
+	{
+		new Customer().login("abc");
+	}
+}
+
+17) 
+
+class Customer
+{
+	void login(String username,String password)
+	{
+		System.out.println("A");
+	}
+	void login(String pin)
+	{
+		System.out.println("B");
+	}
+	bool login(int face)
+	{
+		System.out.println("C");
+		return true;
+	}
+     	public static void main(String[] arr)
+	{
+		new Customer().login("abc");
+	}
+}
+18) class Customer
+{
+	protected Customer(){
+		System.out.println("Customer");
+	}
+     	public static void main(String[] arr)
+	{
+		new Customer();
+	}
+}
+
+19) public class ParkRanger
+
+{
+
+    int birds =10;
+
+    public static void main(String[] data){
+
+        int trees = 5;
+
+        System.out.print(trees + birds);//error coz birds in instance member
+
+    }  
+
+20) class Customer
+{
+	protected Customer(){
+		System.out.println("Customer");
+	}
+     
+}
+class SpecialCustomer
+{
+	@override//cannot do for constructors
+	protected Customer(){//Wrong constructor name
+		System.out.println("SpecialCustomer");
+	}
+     	public static void main(String[] arr)
+	{
+		new Customer();
+	}
+}
+
+21) class Customer
+{
+	protected Customer(){
+		try{
+			int num = 100;
+			int num2 = 100/(100-100);
+			System.out.println(num2);
+		}
+		System.out.println("Customer");//no line of code between try and catch
+		catch(Exception e)
+		{
+			System.out.println("Someting went wrong");
+		}
+		catch(DivideByZeroException e)
+		{
+			System.out.println("Cannot divide by zero");
+		}
+	}
+     	public static void main(String[] arr)
+	{
+		new Customer();
+	}
+}
+22) class Customer
+{
+	protected Customer(){
+		try{
+			int num = 100;
+			int num2 = 100/(100-100);
+			System.out.println(num2);
+		}
+		catch(Exception e)//Error - The egenration exception has to be teh last one
+		{
+			System.out.println("Someting went wrong");
+		}
+		catch(DivideByZeroException e)
+		{
+			System.out.println("Cannot divide by zero");
+		}
+	}
+     	public static void main(String[] arr)
+	{
+		new Customer();
+	}
+}
+23) class Customer
+{
+	protected Customer(){
+		try{
+			int num = 100;
+			int num2 = 100/(100-100);
+			System.out.println(num2);
+		}
+		catch(ArithmeticException e)
+		{
+			System.out.println("Cannot divide by zero");
+		}
+		catch(Exception e)//Error - The egenration exception has to be teh last one
+		{
+			System.out.println("Someting went wrong");
+		}
+		
+	}
+     	public static void main(String[] arr)
+	{
+		new Customer();
+	}
+}
+
+24) class Customer
+{
+	protected Customer(){
+		try{
+			int[] score = {10,8,9,5};
+			System.out.println(score[3]);
+		}
+		catch(ArithmeticException e)
+		{
+			System.out.println("Cannot divide by zero");
+		}
+		catch(Exception e)//Error - The egenration exception has to be teh last one
+		{
+			System.out.println("Someting went wrong");
+		}
+		System.out.println("Done and dusted");
+		
+	}
+     	public static void main(String[] arr)
+	{
+		new Customer();
+	}
+}
+
+25) class Customer
+{
+	protected Customer(){
+		try{
+			int[] score = {10,8,9,5};
+			System.out.println(score[4]);
+		}
+		catch(ArithmeticException e)
+		{
+			System.out.println("Cannot divide by zero");
+		}
+		catch(Exception e)//Error - The egenration exception has to be teh last one
+		{
+			System.out.println("Someting went wrong");
+		}
+		System.out.println("Done and dusted");
+		
+	}
+     	public static void main(String[] arr)
+	{
+		new Customer();
+	}
+}
+26)
+ class Customer
+   {
+      int id = 101;//instance
+      String name = "Ramu";//instance
+      void printDetails()
+      {
+		System.out.println(this.id);
+		System.out.println(this.name);
+	}
+}
+class ManageCustomer{
+	
+      void printCUstomer(customer[] custs)
+	{
+		for(Customer c:custs)
+		{
+			c.printDetails();
+		}
+	}	
+	void manage(){
+		Customer[] customers = new Customer[3];
+		for(int i=0;i<3;i++)
+		{
+			customers[i] = new Customer();
+		}
+		printCUstomer(customers);
+	}
+	public static void main(String[] arr)
+	{
+		new ManageCustomer().manage;
+	}
+}
+Employee(id,name,age,city,department_id),Deperment(id,name)
+27) select * from Employee where age<30
+
+28)select * from Employee where age<30 group by city;//group by has to have only teh column that is grouped by other columns have to aggregated
+
+29) select city,count(id) from Employee where age<30 group by city;
+
+30) select city,count(id) from Employee where age<30 group by city having count(id)>=3;
+
+31) select name from employee e join department d on e.department_id=d.id
+
+
